@@ -1,0 +1,29 @@
+|=>What is major difference between junit runner and TestNG runner?
+in junit :
+we use @RunWith(Cucumber.class) annotation
+in testNG we extend abstract class named  AbstractTestNGCucumberTests
+
+|=> What happens when you breakdown into two different step definition files?
+we will run into null pointer and this can be fixed with help of picocontainer dependency injection
+
+1-how to write maintain reusable code across the framework?
+ ->with the help of step definition and regular expression context
+2-how to data drive the data into a testcase?
+ ->DataTable helps to drive the data
+3-How to Parameterize the testcases with multiple set of data?
+ ->Scenario outline:
+  ->Examples:
+4-How to achieve %100 test coverage through framework?
+ ->Cucumber-Gherkin scenario
+5-How to run all the tests on single click?
+ ->test runner
+6-How to control the execution of tests to select and run only few based o needs?
+ ->tags in cucumber and mention the same in test runner
+7-How to implement logic to separate test code from common post-requests and pre-requests of the test
+ ->hooks and tags / background
+8-How to generate HTML reports and Junit reports?
+ -> plugin with test runner
+9-How to develop Maven framework with existing code?
+ ->
+10-How to integrate developed framework to Jenkins Continuous Integration  Environment?
+

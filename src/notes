@@ -1,0 +1,4 @@
+single responsibility principle = a class should have one responsibility. exp: a class should be responsible for login
+loosly coupled = sharing information one classs to another class with dependency injection (like cucumber-picocontainer)
+tightly coupled = class is not sharing information
+Factory Design Pattern = we create one factory that responsible for creating the objects of all page object basis
