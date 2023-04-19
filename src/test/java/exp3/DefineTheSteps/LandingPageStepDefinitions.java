@@ -16,28 +16,33 @@ public class LandingPageStepDefinitions {
     TestContextSetup testContextSetup;
 
     public LandingPageStepDefinitions(TestContextSetup p_testContextSetup) {
-        this.testContextSetup = p_testContextSetup;
+        this.testContextSetup = p_testContextSetup;  //This constructor will do the duties for @Given that is why we dont have any code in @Given method
+                                                        //this method will do it in "LandingPage"
+                                                      //   public void SearchItem(String name){
+                                                  //        driver.findElement(Search).sendKeys(name);}
+
     }
 
     @Given("User is on GreenCard Landing Page ss")
     public void user_is_on_green_card_landing_page() {
 
-    /*    ChromeOptions ops = new ChromeOptions();
-        ops.addArguments("--remote-allow-origins=*");
-       testContextSetup.driver = new ChromeDriver(ops);
-       testContextSetup.driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");*/
     }
 
     @When("user searched with Shortname {string} and extracted actual name of product ss")
     public void user_searched_with_shortname_and_extracted_actual_name_of_product(String ProductNAme) {
+        //we are creating an instance of landing page but it is NOT like LandingPage landing = new LandingPage(WebDriver driver)
+        //We are calling it from our GODFATHER class
+        //LandingPage instanceName = RoofClass    . smallRoofClas   . methodOfSmallRoofClass
         LandingPage landingPage = testContextSetup.pageObjectManager.getLandingPage();
+
+
         landingPage.SearchItem(ProductNAme);
-       // testContextSetup.driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        try {
+        testContextSetup.testBase.WebDriverManager().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+       /* try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
-        }
+        }*/
         testContextSetup.LandingPageProductName = landingPage.getProductName();
         String newName = testContextSetup.LandingPageProductName;
         testContextSetup.LandingPageProductName = newName.substring(0, newName.indexOf(" "));

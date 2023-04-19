@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class TestBase {
-    public WebDriver driver;
+    public WebDriver driver; // it is main, unique, top, king driver of all framework
 
 
 
@@ -20,7 +20,7 @@ public class TestBase {
 
     public WebDriver WebDriverManager() {
 
-
+//with this method we will reach our TOP driver from other classes. it is mix of DriverUtil and PropertiesReadingUtil
 
         try {
             FileInputStream  fileInputStream = new FileInputStream(System.getProperty("user.dir") + "//src/Rahul_Cucumber_Two/src/test/recourses/global.properties");
